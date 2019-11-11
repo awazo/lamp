@@ -1,0 +1,12 @@
+---
+- hosts: targets
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+
+  roles:
+    - selinux
+    - mysql
+    - php
+    - httpd
+

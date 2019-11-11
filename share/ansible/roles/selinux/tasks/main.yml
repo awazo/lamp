@@ -1,0 +1,9 @@
+---
+- name: install common dependencies
+  yum: name={{ item }} state=installed
+  with_items: 
+    - libselinux-python
+    - libsemanage-python
+- name: disable selinux
+  selinux: state=disabled
+
